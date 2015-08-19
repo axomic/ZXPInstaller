@@ -1,7 +1,7 @@
 {
   "macos" : {
     "background": "assets/osx/installer.png",
-    "title": "ZXP Installer",
+    "title": "OpenAsset InDesign Plugin Installer",
     "icon": "assets/osx/icon.icns",
     "icon-size": 80,
     "contents": [
@@ -10,7 +10,7 @@
     ]
   },
   "win" : {
-    "title" : "ZXPInstaller",
+    "title": "OpenAsset InDesign Plugin Installer",
     "icon" : "assets/win/icon.ico"
   }
 }

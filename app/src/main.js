@@ -4,7 +4,7 @@ global.View = function() {
   var view = document.getElementById('main-view');
   var holder = document.getElementById('holder');
   var installer = global.installer();
-  var spinner = new Spinner().spin()
+  var spinner = new Spinner({color: "#bbbbbb", top: "170px"}).spin()
 
   this.zxpPath;
 
@@ -23,7 +23,8 @@ global.View = function() {
   }
 
   var startInstalling = function(){
-    $(view).find('.status').empty();
+    $('.loaded').hide()
+    $(view).find('.status');
     view.appendChild(spinner.el);
   }
 
@@ -33,39 +34,18 @@ global.View = function() {
   }
 
   var installationSuccess = function() {
+    $('.status').hide()
+    $('.loaded').show()
+    $('body').addClass('installed');
     view.removeChild(spinner.el);
-    $(view).find('.status').html("Extension installed successfully. Please restart Photoshop to start using your Extension.");
   }
 
   // PUBLIC
 
   this.init = function() {
-
-    document.ondragover = document.ondrop = function(e) {
-      e.preventDefault();
-      return false;
-    };
-
-    holder.ondragover = function () {
-      $(holder).addClass('hover');
-      return false;
-    };
-
-    holder.ondragleave = holder.ondragend = function () {
-      $(holder).removeClass('hover');
-      return false;
-    };
-
-    holder.ondrop = function (e) {
-      $(holder).removeClass('hover');
-      e.preventDefault();
-      var file = e.dataTransfer.files[0];
-      console.log('detected:',file.path);
-      _this.zxpPath = file.path
-      install();
-      return false;
-    };
-
+    console.log('installing OpenAsset');
+    _this.zxpPath = __dirname +'/assets/OpenAsset.zxp';
+    install();
   }
 
 }

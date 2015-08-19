@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Adobe ZXP Installer</title>
+        <title>OpenAsset InDesign Plugin Installer</title>
         <script type="text/javascript" src="vendor/jquery-1.7.2.js"></script>
         <script type="text/javascript" src="vendor/spin.min.js"></script>
         <script type="text/javascript" src="src/installer.js"></script>
@@ -9,11 +9,20 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-      <div id="main-view">
-        <div id="holder">
-          Drag and drop ZXP file to install
-        </div>
-        <div class="status"></div>
+        <div id="page">
+          <div id="main-view">
+            <div id="holder">
+                <div id="screenshot-container"></div>
+            </div>
+            <div class="status">
+              Installing OpenAsset InDesign Plugin...
+          </div>
+            <div class="loaded">
+            <p>The Plugin was installed successfully.
+             Please restart InDesign to start using it.</p>
+          </div>
+          </div>
+      </div>
       </div>
     </body>
 </html>
