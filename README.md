@@ -4,7 +4,7 @@ NB: the ZXP installer currently uses electron-builder which, peculiarly, searche
 
 As our installer is not a 'drag to applications' installer but rather a 'double-click-and-run' installer, this requires changing. This kind of output DMG cannot actually be set by altering `packager.json`. The first argument in the array that electron-builder is reading is the location of the Applications or other folder you'd like to display in the DMG (ie: the X in 'Drag me into X'). electron-builder expects the array to contain the folder location and if it's not there, it does what JS always does when you check an attribute of `undefined`. Not great API design. 
 
-`node_modules/electron-builder/lib/osx.js`
+`node_modules/electron-builder/lib/macos.js`
 ```
     options.log( '- Starting creation of installer for ´' + options.platform );
 
