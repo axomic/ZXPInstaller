@@ -11,13 +11,19 @@ global.View = function() {
   _this = this;
 
   var install = function() {
-    var promise = installer.install(_this.zxpPath);
-    startInstalling();
+      startInstalling();
+    var promise = installer.uninstall(_this.zxpPath);
     promise.then(function(result) {
-      installationSuccess();
-    }, function(err) {
-      console.log(err); // Error
-      installationFaild(err);
+        var installPromise = installer.install(_this.zxpPath);
+        installPromise.then(function(res){
+            installationSuccess();
+        }, function(err) {
+            console.log(err); // Error
+            installationFaild(err);
+        });
+    }, function(err){
+        console.log(err); // Error
+        installationFaild(err);
     });
 
   }

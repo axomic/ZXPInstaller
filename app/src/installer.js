@@ -50,6 +50,26 @@ global.installer = function() {
       });
 
 
-    }
+    },
+
+    uninstall: function(zxpPath) {
+
+      console.log("using target path of " + target_path());
+      console.log("startig to install ZXP from path " + zxpPath);
+      return promise = new Promise(function(resolve, reject) {
+          var cmd = path.join('"'+__dirname, target_path()) +'" '+
+                    [CMD_PREFIX+"remove",
+                     'com.axomic.openassetforindesign.extension'].join(' ');
+          try {
+            var child  = install_process.execSync(cmd );
+          } catch(e){
+              // "Why would you use execSync? - because ExManCmd isn't real"
+          }
+        resolve();
+
+      });
+
+
+    },
   }
 };
