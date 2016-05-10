@@ -21,7 +21,7 @@
     "build:osx": "npm run clean:osx && electron-packager ./app \"OpenAsset For InDesign Installer\" --out=release/osx --platform=darwin --arch=x64 --version=0.25.3 --icon=assets/osx/icon.icns --app-bundle-id=\"com.axomic.openasset.indesign-extension\" --app-version=\"1.0.30\"",
     "build:win": "npm run clean:win && electron-packager ./app \"OpenAsset For InDesign Installer\" --out=release/win --platform=win32 --arch=ia32 --version=0.25.3 --icon=assets/win/icon.ico --app-bundle-id=\"com.axomic.openasset.indesign-extension\" --app-version=\"1.0.30\"",
     "pack": "npm run pack:osx && npm run pack:win",
-    "pack:osx": "npm run build:osx && electron-builder \"release/osx/OpenAsset For InDesign Installer.app\" --platform=macos --out=\"release/osx\" --config=packager.json",
+    "pack:osx": "npm run build:osx && electron-builder \"release/osx/OpenAsset For InDesign Installer.app\" --platform=osx --out=\"release/osx\" --config=packager.json",
     "pack:win": "npm run build:win && electron-builder \"release/win/OpenAsset For InDesign Installer-win32\" --platform=win --out=\"release/win\" --config=packager.json"
   },
   "repository": {
