@@ -65,7 +65,7 @@ global.installer = function() {
           } catch(e){
               // "Why would you use execSync? - because ExManCmd isn't real"
           }
-        resolve();
+          resolve();
 
       });
 
